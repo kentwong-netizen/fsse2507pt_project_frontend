@@ -1,12 +1,13 @@
-import {useLocation} from "@tanstack/react-router";
+import TopNavBar from "../../components/TopNavBar";
+import ProductCardContainer from "./components/ProductCardContainer.tsx";
+
 
 export default function ProductListingPage() {
-  const location = useLocation();
 
   return (
-    <div className="product-listing-container">
-      <h1>Product Listing Page!</h1>
-      <h3>Pathname: {location.pathname} </h3>
-    </div>
+    <>
+      <TopNavBar/>
+      <ProductCardContainer/>
+    </>
   )
 }

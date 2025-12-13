@@ -2,6 +2,8 @@
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
