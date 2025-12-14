@@ -1,0 +1,37 @@
+[
+  {
+    "pid": 1,
+    "name": "Handgun",
+    "imageUrl": "https://www.evilresource.com/images/data/full/re2remake/samurai-edge-chris-model.png?4622623a",
+    "price": 100.00,
+    "hasStock": true
+  },
+  {
+    "pid": 2,
+    "name": "Shotgun",
+    "imageUrl": "https://www.evilresource.com/images/data/full/re2remake/w-870.png?c560765f",
+    "price": 1500.00,
+    "hasStock": true
+  },
+  {
+    "pid": 3,
+    "name": "SubMachine Gun",
+    "imageUrl": "https://www.evilresource.com/images/data/full/re2remake/le-5.png?a358fe1b",
+    "price": 1000.00,
+    "hasStock": true
+  },
+  {
+    "pid": 4,
+    "name": "Magnum",
+    "imageUrl": "https://www.evilresource.com/images/data/full/re2remake/lightning-hawk.png?f3a3eb0f",
+    "price": 5000.00,
+    "hasStock": false
+  },
+  {
+    "pid": 5,
+    "name": "Smart TV",
+    "imageUrl": "https://www.price.com.hk/space/product/188000/188938_9oujbm_4.jpg",
+    "price": 1800.00,
+    "hasStock": true
+  }
+]

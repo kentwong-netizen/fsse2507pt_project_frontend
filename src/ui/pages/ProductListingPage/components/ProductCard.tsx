@@ -1,16 +1,32 @@
 import {Button, Card} from "react-bootstrap";
+import type {GetAllProductDto} from "../../../../data/product/product.type.tsx";
 
-export default function ProductCard() {
+interface Props {
+  getAllProductDto : GetAllProductDto;
+}
+
+export default function ProductCard({getAllProductDto}: Props) {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <div className="d-flex justify-content-center">
+        <div
+          style={{
+          width: 250,
+          height: 200,
+          backgroundImage:`url(${getAllProductDto.imageUrl})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
+        }}
+      >
+      </div>
+      </div>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title style={{height:"6rem"}}>{getAllProductDto.name}</Card.Title>
+        <Card.Text style={{height:"3rem"}}>
+          ${getAllProductDto.price.toLocaleString()}<br/>
+          {getAllProductDto.hasStock?"有貨":"賣曬啦"}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Detail</Button>
       </Card.Body>
     </Card>
   );
