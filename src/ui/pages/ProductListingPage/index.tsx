@@ -1,7 +1,7 @@
 import TopNavBar from "../../components/TopNavBar";
 import ProductCardContainer from "./components/ProductCardContainer.tsx";
 import {useEffect, useState} from "react";
-import type {GetAllProductDto} from "../../../data/product/product.type.tsx";
+import type {GetAllProductDto} from "../../../data/product/product.type.ts";
 
 //import mockdata from "./response.json";
 import LoadingContainer from "../../components/LoadingContainer";

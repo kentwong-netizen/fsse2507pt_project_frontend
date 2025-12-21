@@ -1,6 +1,6 @@
 import {Col, Row} from "react-bootstrap";
 import ProductCard from "./ProductCard.tsx";
-import type {GetAllProductDto} from "../../../../data/product/product.type.tsx";
+import type {GetAllProductDto} from "../../../../data/product/product.type.ts";
 
 interface Props{
   getAllProductDtoList: GetAllProductDto[];
