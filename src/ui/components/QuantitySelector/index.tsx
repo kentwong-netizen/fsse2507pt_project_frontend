@@ -26,6 +26,7 @@ export default function QuantitySelector({
       <Button
         style={{height:30, width:30, padding:0}}
         onClick={handleQuantityPlusOne}>
+
         <FontAwesomeIcon icon={faPlus} fade />
       </Button>
     </Stack>

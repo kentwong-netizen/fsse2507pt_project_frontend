@@ -14,7 +14,7 @@ export default function ProductListingPage() {
   const [getAllProductDtolist, setGetAllProductDtolist] = useState<GetAllProductDto[] | undefined > (undefined);
   const [isLoading, setIsLoading] = useState(true);
 
-  const navigate = useNavigate(({from:"/"}));
+  const navigate = useNavigate(({from:"/product/$productId"}));
 
   useEffect(() => {
   const fetchAllProduct = async () => {

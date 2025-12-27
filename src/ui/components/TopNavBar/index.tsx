@@ -10,7 +10,9 @@ export default function TopNavBar() {
           <Navbar.Brand>Toy Shop</Navbar.Brand>
         </Link>
         <Navbar.Collapse className="justify-content-end">
+          <Link to="/login">
           <Button variant="light">Login</Button>
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
