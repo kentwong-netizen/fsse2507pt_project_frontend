@@ -1,13 +1,18 @@
 import TopNavBar from "../../components/TopNavBar";
 import {Alert, Button, Container, Form} from "react-bootstrap";
-import {type FormEvent, useState} from "react";
-import {signInWithEmailAndPassword} from "../../../authService/FirebaseAuthService.ts";
-import {useRouter} from "@tanstack/react-router";
+import {type FormEvent, useContext, useEffect, useState} from "react";
+import {signInWithEmailAndPassword, signInWithGoogle} from "../../../authService/FirebaseAuthService.ts";
+import {useNavigate, useRouter} from "@tanstack/react-router";
+import {LoginUserContext} from "../../../context/LoginUserContext.tsx";
+import {GoogleLoginButton} from "react-social-login-buttons";
 
 export default function LoginPage() {
 
   const router = useRouter();
   const [isLoginFailed, setisLoginFailed] = useState(false);
+
+  const loginUser = useContext(LoginUserContext);
+  const navigate = useNavigate({from:"/login"});
 
   const handleLoginWithEmailAndPswd = async (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -31,6 +36,13 @@ export default function LoginPage() {
     // console.log(email);
     // console.log(password);
   }
+  useEffect(() => {
+    if(loginUser){
+      navigate({to:"/"})
+    }
+  }, [loginUser]);
+
+
 
   return(
     <>
@@ -57,6 +69,7 @@ export default function LoginPage() {
           <Button className="w-100" variant="primary" type="submit">
             Submit
           </Button>
+          <GoogleLoginButton onClick={() => alert("Hello")}/>
         </Form>
       </Container>
     </>
