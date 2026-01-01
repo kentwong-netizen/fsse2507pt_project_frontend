@@ -11,11 +11,15 @@ export default function LoginPage() {
   const router = useRouter();
   const [isLoginFailed, setisLoginFailed] = useState(false);
 
+  const [loginBtnClicked, setLoginBtnClicked] = useState(false);
+
   const loginUser = useContext(LoginUserContext);
   const navigate = useNavigate({from:"/login"});
 
   const handleLoginWithEmailAndPswd = async (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    setLoginBtnClicked(true);
 
     const target = event.target as typeof event.target & {
       email:{value: string};
@@ -37,12 +41,12 @@ export default function LoginPage() {
     // console.log(password);
   }
   useEffect(() => {
-    if(loginUser){
+    if(loginUser && loginBtnClicked) {
+      router.history.back();
+    } else if(loginUser){
       navigate({to:"/"})
     }
   }, [loginUser]);
-
-
 
   return(
     <>

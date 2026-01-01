@@ -18,9 +18,12 @@ export default function TopNavBar() {
           <div className="text-white me-2">
             {loginUser.email}
           </div>
-          <Button variant="success" className="me-1">
-            <FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff",}} />
-          </Button>
+
+          <Link to={"/shoppingcart"}>
+            <Button variant="success" className="me-1">
+              <FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff",}} />
+            </Button>
+          </Link>
 
           <Button variant= "danger" onClick={signOut}>
             Logout
