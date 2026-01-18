@@ -1,26 +1,39 @@
 import QuantitySelector from "../../../components/QuantitySelector";
+import {Button} from "react-bootstrap";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import type {CartItemDto} from "../../../../data/cartItem/cartItem.type.ts";
 
-export default function ShoppingCartTableRow() {
+interface Props {
+  dto: CartItemDto
+}
+
+export default function ShoppingCartTableRow({dto}:Props) {
   return(
     <tr>
       <td>
-        <img src="https://www.price.com.hk/space/product/188000/188938_9oujbm_4.jpg" alt="pic"/>
+        <img height="120" src={dto.imageUrl} alt="pic"/>
       </td>
       <td>
-        SmartTV
+        {dto.name}
       </td>
       <td>
-        $1800.00
+        ${dto.price.toLocaleString()}
       </td>
       <td>
         <QuantitySelector
-          quantity={5}
+          quantity={dto.cartQuantity}
           handleQuantityMinusOne={() =>{}}
           handleQuantityPlusOne={()=>{}}
         />
       </td>
       <td>
-        $9000.00
+        ${(dto.price*dto.cartQuantity).toLocaleString()}
+      </td>
+      <td>
+        <Button variant="danger">
+          <FontAwesomeIcon icon={faTrash} />
+        </Button>
       </td>
     </tr>
   )
